@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lato:wght@300&family=Poppins&display=swap');
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color: #FAD02C ;
+    --bg-color: #333652 ;
+    --secondary-color: #90ADC6 ;
+    --heading-font: 'Dancing Script',cursive;
+    --title-font: 'Poppins', sans-serif;
+    --sub-heading-font: 'Lato', sans-serif; 
+}
+body {
+    margin: 0; padding: 0;
+    max-width: 100%; height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(50deg, var(--bg-color),var(--secondary-color));
+}
+/* audio element hidden by default */
+audio {
+    display: none;
+}
+/* input slider thumb styling */
+::-webkit-slider-thumb {
+    appearance: none; position: relative;
+    background: var(--main-color);
+    width: 15px; height: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+::-webkit-slider-thumb::before {
+    content: "";
+    position: absolute;
+    width: 100%; 
+    color: var(--main-color);
+    height: 100%; background: var(--main-color);
+}
+button {
+    transition: all .2s;
+}
+button:hover {
+    background: var(--main-color) !important; color: var(--bg-color) !important;
+}
+/* parent container styling */
+.parent_container {
+    width: 90%; height: auto;
+    padding: 12px 5px;
+    background: linear-gradient(50deg, var(--secondary-color),var(--bg-color));
+    border-radius: 10px;
+}
+
+/* brand section styling */
+.brand_section {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand_section a{
+    margin: 0 30px;
+    text-decoration: none;
+    color: #ececec;
+    font-family: var(--title-font);
+}
+.brand_section a.title {
+    font-family: var(--heading-font);
+    font-size: 60px;
+    text-shadow: 0 0 3px var(--bg-color);
+}
+.brand_section .slides {
+    background-color: #0101016e;
+    padding: 6px 31px;
+    border-radius: 7px;
+    font-size: 17px;
+}
+.brand_section .slides .current_slide{
+    font-size: 24px;
+    
+    color: var(--main-color);
+}
+
+/* brand section styling ended */
+.container{
+    height: 80%;
+}
+.row {
+    margin: 60px 0 0 0;
+    height: 100% !important;
+}
+.row .col{
+    height: 100% !important;
+}
+.container .col .img_container {
+    width: 100%; height: 300px;
+}
+.container .col .img_container img{
+    width: 80%; height: 100%;
+    margin: 0 10%;
+    background-size: cover; background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+ .img_container input {
+    display: none;
+}
+/* volume buttons section in desktop */
+.container-fluid {
+    display: flex;
+    justify-content: center; align-items: center;
+    margin: 50px 0;
+}
+.container-fluid button {
+    width: 40px; height: 40px;
+    position: relative;
+    margin: 0 5px;
+    border: none; outline: none;
+    background: var(--bg-color); color: var(--main-color);
+    font-size: 20px;
+    border-radius: 50px;
+}
+ input {
+    margin: 0 5px;
+    background: none;
+    display: flex;
+    align-items: center;
+    appearance: none;
+    position: relative;
+}
+ input::before {
+    content: "";
+    position: absolute;
+    width: 100%; height: 2px;
+    background: var(--bg-color);
+}
+
+.container-fluid #songvolumedesktop {
+    transition: all .5s !important;
+    -webkit-transition: all .5s !important;
+    -moz-transition: all .5s !important;
+    -ms-transition: all .5s !important;
+    -o-transition: all .5s !important;
+}
+/* left section stylign started */
+div.col .display-4 {
+    color: var(--main-color);
+    font-size: 3.2vw;
+    text-align: center;
+}
+div.col p.lead {
+    font-family: var(--sub-heading-font);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+/* <!-- action btns section started --> */
+.action_btns {
+    /* background: green; */
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.action_btns button {
+    width: 50px; height: 50px;
+    background: var(--bg-color); color: var(--main-color);
+    font-size: 17px;
+    border-radius: 50px;
+    border: none; outline: none;
+    margin: 0 10px;
+}
+/* pause button hidden by default */
+.action_btns .pause {
+    display: none;
+}
+.song_duration {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 0 0  ;
+}
+.song_duration input{
+    width: 50%;
+}
+/* volume buttons section in mobile */
+.volume_section_mobile {
+    display: none;
+}
+
+.main {
+    background-color: var(--main-color) !important;
+    color:var(--bg-color) !important;
+}
+
+@media (max-width: 1024px){
+    .volume_section_desktop{
+        display: flex;
+    }
+}
+/* media queries for tablets */
+@media (max-width:767px){
+    .parent_container {
+        height: auto;
+    }
+
+    /* brand section */
+    .brand_section a{
+        margin: 0 20px;
+    }
+    .brand_section a.title {
+        font-family: var(--heading-font);
+        font-size: 30px;
+    }
+    .brand_section .slides {
+        padding: 3px 21px;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+    .brand_section .slides .current_slide{
+        font-size: 18px;
+    }
+    /* brand section ended */
+  
+   
+    .container{
+        height: auto;
+    }
+
+    .container .col .img_container {
+        width: 100%; height: auto;
+        padding: 0; margin: 0;
+     
+    }
+    .container .col:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+    }
+    .container .col .img_container img{
+ border-radius: 7px;
+ -webkit-border-radius: 7px;
+ -moz-border-radius: 7px;
+ -ms-border-radius: 7px;
+ -o-border-radius: 7px;
+}
+    
+/* volume buttons section in desktop */
+.volume_section_desktop {
+  display: none;
+
+}
+
+/* left section stylign started */
+div.col .display-4 {
+    font-size: 5vw;
+}
+div.col p.lead {
+    font-size: 17px;
+}
+
+/* <!-- action btns section started --> */
+.container .col:last-child{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+margin: 10px 0 0 0;
+}
+.action_btns {
+    height: auto ;
+    margin: 3px 0;
+}
+.action_btns button {
+    width: 35px; height: 35px;
+    font-size: 14px ;
+}
+
+
+.volume_section_desktop button {
+    width: 30px; height: 30px;
+}
+
+/* volume buttons section in mobile */
+.volume_section_mobile {
+    display: flex !important;
+    height: auto;
+    margin: 20px 0 !important;
+}
+.song_duration_desktop {
+    display: none;
+}
+.img_container .song_duration_mobile {
+    display: flex !important;
+    display: block;
+    margin: 15px auto;
+    width: 70%;
+}
+
+}
+
+@media (max-width:480px){
+    .parent_container {
+        height: auto;
+    }
+
+    /* brand section */
+    .brand_section a{
+        margin: 0 20px;
+    }
+    .brand_section a.title {
+        font-family: var(--heading-font);
+        font-size: 30px;
+    }
+    .brand_section .slides {
+        padding: 3px 21px;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+    .brand_section .slides .current_slide{
+        font-size: 18px;
+    }
+    /* brand section ended */
+    
+    .img_container input {
+        display: block;
+        width: 60%;
+        margin:5px 20%;
+    }
+    ::-webkit-slider-thumb {
+        width: 8px; height: 8px;
+    }
+    .container{
+        height: 80%;
+    }
+    .row {
+        margin: 12px 0 0 0;
+    }
+    .row .col{
+        height: auto !important;
+    }
+    .container .col .img_container {
+        width: 100%; height: auto;
+        padding: 0; margin: 0;
+    }
+    .container .col:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+        margin: 25px 0;
+    }
+    .container .col .img_container img{
+ clip-path: circle(36.1% at 50% 50%);
+
+    }
+    
+/* volume buttons section in desktop */
+.volume_section_desktop {
+  display: none;
+}
+/* left section stylign started */
+div.col .display-4 {
+    font-size: 5.5vw;
+}
+div.col p.lead {
+    font-size: 14px;
+}
+
+/* <!-- action btns section started --> */
+.container .col:last-child{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+margin: 20px 0 0 0;
+}
+.action_btns {
+    height: auto ;
+    margin: 3px 0;
+}
+.action_btns button {
+    width: 35px; height: 35px;
+    font-size: 14px ;
+}
+
+
+/* volume buttons section in mobile */
+.volume_section_mobile {
+    display: flex;
+    margin: 20px 0 0 0 !important;
+    width: 100%;
+    justify-content: center; align-items: center;
+    margin:  0;
+}
+.container-fluid button {
+    width: 27px; height: 27px;
+    font-size: 11px ;
+}
+ input {
+   width: 50%;
+}
+.song_duration {
+    display: none;
+}
+}

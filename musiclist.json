@@ -1,0 +1,37 @@
+[
+    {
+        "index": 1,
+        "title": "Despacito" ,
+        "singerName": "Luis Fonsi" ,
+        "imgsrc" : "despacitoimg.jpg",
+        "songsrc" : "despacito.mp3"
+    } ,
+    {
+        "index": 2,
+        "title": "Senorita" ,
+        "singerName": "Unknown Name" ,
+        "imgsrc" : "senoritaimg.jpg",
+        "songsrc" : "senorita.mp3"
+    } ,
+    {
+        "index": 3,
+        "title": "Tum hi ana" ,
+        "singerName": "sidhart" ,
+        "imgsrc" : "tumhianapicture.jpg",
+        "songsrc" : "tumhiana.mp3"
+    } , 
+    {
+        "index": 4,
+        "title": "Waka waka a a" ,
+        "singerName": "Shakira" ,
+        "imgsrc" : "wakawakaimg.jpeg",
+        "songsrc" : "waka-waka.mp3"
+    },
+    {
+        "index": 5,
+        "title": "Oppa Gangnam Style" ,
+        "singerName": "Some CHiny Person" ,
+        "imgsrc" : "gangnamimg.jpg",
+        "songsrc" : "gangnam.mp3"
+    }
+]
