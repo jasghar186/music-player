@@ -19,6 +19,17 @@
 
 <body>
 
+
+    <!-- loading animation -->
+    <div id="loader_container" >
+        <div class="loader">
+
+        </div>
+    </div>
+
+
+    <!-- loading animation ended -->
+
     <audio controls class="audioelement" loop>
         <source src="despacito.mp3">
     </audio>
@@ -43,7 +54,11 @@
                     <!-- img container -->
                     <div class="img_container">
                         <img src="despacitoimg.jpg" alt="Oppa Gangnam Style" class="img-fluid" id="songimg">
-                        <input type="range" min="0" max="100" value="10" class="song_duration_mobile" id="durationmobile">
+
+                    </div>
+                    <div class="mobiledur">
+                        <input type="range" min="0" max="100" value="10" class="song_duration_mobile"
+                            id="durationmobile">
                     </div>
                     <!-- volume section in desktop -->
                     <div class="container-fluid volume_section_desktop">
@@ -55,7 +70,7 @@
                         <button class="volume" id="volumeup">
                             <i class="fa fa-volume-up"></i>
                         </button>
-                        <input type="range" min="0" value="10" max="100" id="songvolumedesktop">
+                        <input type="range" min="0" value="50" max="100" id="songvolumedesktop">
                     </div>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6">
@@ -94,7 +109,7 @@
                         <button class="volume" id="mobilevolumeup">
                             <i class="fa fa-volume-up"></i>
                         </button>
-                        <input type="range" min="0" value="10" max="100" id="mobilevolumeslider">
+                        <input type="range" min="0" value="50" max="100" id="mobilevolumeslider">
                     </div>
 
                 </div>
