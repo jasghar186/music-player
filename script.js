@@ -1,10 +1,8 @@
 $("document").ready(function () {
-    // loading animation 
-    setTimeout(() => {
-        $(".loading_container").css("display", "none")
-    }, 2000)
+   
 
     // loading animation ended
+
 
     // declare variables
     var audioelem = $(".audioelement");
@@ -19,13 +17,53 @@ $("document").ready(function () {
     var volumeDesktop = $("#songvolumedesktop");
     var mutebtn = $("#mute");
     var volumeupbtn = $("#volumeup");
-    var durationdesktop = $("#songdurationdesktop") ;
-    var durationmobile = $("#durationmobile") ;
-    var mobielmute = $("#mobilemute") ;
-    var mobilevolumeup = $("#mobilevolumeup") ;
+    var durationdesktop = $("#songdurationdesktop");
+    var durationmobile = $("#durationmobile");
+    var mobielmute = $("#mobilemute");
+    var mobilevolumeup = $("#mobilevolumeup");
     var mobileslider = $("#mobilevolumeslider")
     var counter = 0;
 
+
+    
+ // loading animation 
+ setTimeout(() => {
+    $("#loader_container").css("display", "none") ;
+    // some default functions
+    setvolume()
+    
+}, 2000)
+
+
+
+    // events
+    $(playBtn).click(playsong)
+    $(pauseBtn).click(pausesong)
+    $(mutebtn).click(mute)
+    $(volumeupbtn).click(volumeup)
+    $(durationdesktop).change(setduration)
+    $(durationmobile).change(setduration)
+    $(mobileslider).change(setvolume)
+    $(volumeDesktop).change(setvolume)
+    $(mobielmute).click(mute)
+    $(mobilevolumeup).click(volumeup)
+
+
+    // functions started
+
+    function playsong() {
+        $(audioelem).trigger("play");
+        $(playBtn).css("display", "none");
+        $(pauseBtn).css("display", "block")
+        $(this).addClass("main")
+    }
+
+
+    function pausesong() {
+        $(audioelem).trigger("pause");
+        $(this).css("display", "none");
+        $(playBtn).css("display", "block")
+    }
 
 
     // next btn function
@@ -46,6 +84,7 @@ $("document").ready(function () {
                 $(songtitle).html(data[counter].title)
                 $(singername).html(data[counter].singerName)
                 playsong()
+                setvolume()
             }
 
         })
@@ -66,62 +105,53 @@ $("document").ready(function () {
                 $(songtitle).html(data[counter].title)
                 $(singername).html(data[counter].singerName)
                 playsong()
+                setvolume()
             }
         })
     })
 
-    // events
-    $(playBtn).click(playsong)
 
-    function playsong() {
-        $(audioelem).trigger("play");
-        $(playBtn).css("display", "none");
-        $(pauseBtn).css("display", "block")
-        $(this).addClass("main")
-    }
-
-
-    $(pauseBtn).click(function () {
-        $(audioelem).trigger("pause");
-        $(this).css("display", "none");
-        $(playBtn).css("display", "block")
-    })
 
     // volume buttons desktop event function
 
-    function setvolume(){
-        console.log($(audioelem)[0].volume);
-        $(audioelem)[0].volume = parseFloat($(this).val() / 100)
+    function setvolume() {
+        $(audioelem)[0].volume = $(mobileslider).val() / 100 * 1
+        $(audioelem)[0].volume = $(volumeDesktop).val() / 100 * 1
+        
         playsong()
+
     }
 
-   
-      function volumeup(){
+
+    function volumeup() {
         $(audioelem)[0].volume = 1;
-         $(volumeDesktop).val(100)
+        $(volumeDesktop).val(100)
         $(mobileslider).val(100)
         $(this).toggleClass("main")
+        $(mobielmute).removeClass("main");
+        $(mutebtn).removeClass("main")
         playsong()
-      }
-      function mute(){
+    }
+    function mute() {
         $(audioelem)[0].volume = 0;
         $(volumeDesktop).val(0)
         $(mobileslider).val(0)
         $(this).toggleClass("main")
-        playsong()
-      }
-    function setduration(){
-        $(audioelem)[0].currentTime = Math.floor($(audioelem)[0].duration * parseFloat($(this).val() / 100))
+        $(volumeupbtn).removeClass("main");
+        $(mobilevolumeup).removeClass("main")
         playsong()
     }
-     // mute button function
-     $(mutebtn).click(mute)
+    function setduration() {
 
-     $(volumeupbtn).click(volumeup)
-         $(durationdesktop).change(setduration)
-  $(durationmobile).change(setduration)
-   $(mobileslider).change(setvolume)
-   $(volumeDesktop).change(setvolume)
-    $(mobielmute).click(mute)
-    $(mobilevolumeup).click(volumeup)
+        $(audioelem)[0].currentTime = Math.floor($(audioelem)[0].duration / 100 * $(this).val());
+        playsong()
+    }
+
+    function autoupdate() {
+        $(durationmobile).val(100 / $(audioelem)[0].duration * $(audioelem)[0].currentTime)
+        $(durationdesktop).val(100 / $(audioelem)[0].duration * $(audioelem)[0].currentTime)
+    }
+    setInterval(autoupdate, 1000);
+
+
 })
