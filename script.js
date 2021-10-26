@@ -118,7 +118,7 @@ $("document").ready(function () {
         $(audioelem)[0].volume = $(mobileslider).val() / 100 * 1
         $(audioelem)[0].volume = $(volumeDesktop).val() / 100 * 1
         
-        playsong()
+    
 
     }
 
