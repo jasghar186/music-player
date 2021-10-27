@@ -469,7 +469,7 @@ div.col p.lead {
 }
 @media (max-width: 767px){
     .parent_container {
-    padding: 30px 10px !important ;
+     padding: 10px 10px 30px 10px !important ;
     }
     .volume_section_desktop {
         display: none !important;
@@ -536,7 +536,7 @@ div.col p.lead {
 }
 @media (max-width: 425px){
     .parent_container {
-        padding: 30px 10px !important;
+         padding: 10px 10px 30px 10px !important ;
     }
     .img_container{
         height: 150px !important;
@@ -627,7 +627,7 @@ div.col p.lead {
 }
 @media (max-width: 320px){
  .parent_container {
-    padding: 30px 10px !important ;
+    padding: 10px 10px 30px 10px !important ;
     }
     .row {
         margin: 5px 0 !important;
