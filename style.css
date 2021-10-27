@@ -238,7 +238,9 @@ div.col p.lead {
     background-color: var(--main-color) !important;
     color:var(--bg-color) !important;
 }
-
+#durationmobile {
+    display: none ;
+}
 /* media queries started */
 @media (max-width: 2560px){
     .parent_container {
@@ -384,7 +386,7 @@ div.col p.lead {
         font-size: 1.7vw;
     }
     .img_container {
-        height: 200px !important;
+        height: 150px !important;
     }
     .img_container img {
         min-width: 100%; margin: 0 !important;
