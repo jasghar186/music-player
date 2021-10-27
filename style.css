@@ -239,7 +239,7 @@ div.col p.lead {
     color:var(--bg-color) !important;
 }
 #durationmobile {
-    display: none ;
+    display: none !important;
 }
 /* media queries started */
 @media (max-width: 2560px){
