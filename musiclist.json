@@ -9,28 +9,28 @@
     {
         "index": 2,
         "title": "Senorita" ,
-        "singerName": "Unknown Name" ,
+        "singerName": "Camila Cabello" ,
         "imgsrc" : "senoritaimg.jpg",
         "songsrc" : "senorita.mp3"
     } ,
     {
         "index": 3,
         "title": "Tum hi ana" ,
-        "singerName": "sidhart" ,
+        "singerName": "Jubin Nautiyal" ,
         "imgsrc" : "tumhianapicture.jpg",
         "songsrc" : "tumhiana.mp3"
     } , 
     {
         "index": 4,
-        "title": "Waka waka a a" ,
+        "title": "Waka waka" ,
         "singerName": "Shakira" ,
         "imgsrc" : "wakawakaimg.jpeg",
         "songsrc" : "waka-waka.mp3"
     },
     {
         "index": 5,
-        "title": "Oppa Gangnam Style" ,
-        "singerName": "Some CHiny Person" ,
+        "title": "Gagnam Style" ,
+        "singerName": "ZED POISON" ,
         "imgsrc" : "gangnamimg.jpg",
         "songsrc" : "gangnam.mp3"
     }
